@@ -1,0 +1,4 @@
+// export const CONST_NAME = 'CONST_NAME'
+export const TEXT_REVERSE_HEADER = 'TEXT_REVERSE_HEADER';
+export const TEXT_GET_CONTENT = 'TEXT_GET_CONTENT';
+export const TEXT_SET_CONTENT = 'TEXT_SET_CONTENT';

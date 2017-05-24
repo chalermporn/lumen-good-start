@@ -20,6 +20,9 @@
     "laravel-mix": "^0.11.4"
   },
   "dependencies": {
-    "vue": "^2.3.3"
+    "axios": "^0.16.1",
+    "vue": "^2.3.3",
+    "vue-axios": "^2.0.2",
+    "vuex": "^2.3.1"
   }
 }

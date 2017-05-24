@@ -1,13 +1,37 @@
 <template>
 	<div>
-		<h1>What is lorem ipsum</h1>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam harum incidunt numquam soluta repellendus error maiores blanditiis quisquam mollitia perspiciatis reiciendis qui, inventore minima deserunt voluptas tenetur pariatur? Perspiciatis, architecto?
-		</p>
+		<h1>{{ header }}</h1>
+		<p>{{ content }}</p>
 	</div>
 </template>
 <script>
+	import { mapGetters, mapState, mapMutations, mapActions } from 'vuex';
+
 	export default{
-		
+		computed: {
+			...mapState({
+				header: state=> state.text.header,
+				content: state=> state.text.content
+			}),
+			...mapGetters({
+				contentUpperCase: 'contentUpperCase'
+			}),
+		},
+		methods: {
+			...mapMutations({
+				reverseHeader: 'reverseHeader'
+			}),
+			...mapActions({
+				reverseHeader: 'reverseHeader',
+				setContent: 'setContent',
+				getContent: 'getContent'
+			}),
+		},
+		mounted(){
+			this.$store.dispatch('getContent');
+			setTimeout(()=>{
+				this.$store.dispatch('setContent', 'This is the new content');
+			}, 10000);
+		}
 	}
 </script>

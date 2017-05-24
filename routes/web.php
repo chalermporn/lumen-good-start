@@ -19,7 +19,7 @@ $app->get('/video', function () use ($app) {
    return view('home');
 });
 
-$app->get('/text', function () use ($app) {
+$app->get('/music', function () use ($app) {
    return view('home');
 });
 
