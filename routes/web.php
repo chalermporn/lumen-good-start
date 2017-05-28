@@ -23,3 +23,7 @@ $app->get('/music', function () use ($app) {
    return view('home');
 });
 
+$app->get('test', ['middleware'=>'jwtAuth', function(){
+	
+}]);
+
